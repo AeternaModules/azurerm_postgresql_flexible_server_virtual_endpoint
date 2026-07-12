@@ -1,3 +1,7 @@
+output "postgresql_flexible_server_virtual_endpoints_id" {
+  description = "Map of id values across all postgresql_flexible_server_virtual_endpoints, keyed the same as var.postgresql_flexible_server_virtual_endpoints"
+  value       = { for k, v in azurerm_postgresql_flexible_server_virtual_endpoint.postgresql_flexible_server_virtual_endpoints : k => v.id }
+}
 output "postgresql_flexible_server_virtual_endpoints_name" {
   description = "Map of name values across all postgresql_flexible_server_virtual_endpoints, keyed the same as var.postgresql_flexible_server_virtual_endpoints"
   value       = { for k, v in azurerm_postgresql_flexible_server_virtual_endpoint.postgresql_flexible_server_virtual_endpoints : k => v.name }
